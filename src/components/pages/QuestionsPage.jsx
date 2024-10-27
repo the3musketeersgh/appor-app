@@ -11,6 +11,7 @@ function QuestionsPage() {
   const location = useLocation(); // Get the current location
   const queryParams = new URLSearchParams(location.search);
   const questionType = queryParams.get("type"); // Get the question type from query parameters
+  const quizTitle = queryParams.get("title"); // Get the
   const [questionsData, setQuestionsData] = useState([]);
 
   const [questions, setQuestions] = useState([]); // Shuffled questions state
@@ -22,45 +23,77 @@ function QuestionsPage() {
 
   //my useeffect
 
+  // useEffect(() => {}, [questionType]);
+  //end my useeffect
+
+  // Shuffle questions and answers when the component first renders
+  // useEffect(() => {
+  //   async function loadQuestions() {
+  //     try {
+  //       // Dynamically import the questions file based on questionType
+  //       let qData;
+  //       switch (questionType) {
+  //         case "RME1":
+  //           qData = await import("../../data/godscreationData");
+  //           break;
+  //         case "RME2":
+  //           qData = await import("../../data/godscreation2");
+  //           break;
+  //         case "RME3":
+  //           qData = await import("../../data/godscreation3");
+  //           break;
+  //         case "RME4":
+  //           qData = await import("../../data/religiouspractices");
+  //           break;
+  //         default:
+  //           qData = { default: [] };
+  //       }
+  //       setQuestionsData(qData.default);
+  //     } catch (error) {
+  //       console.error("Error loading questions:", error);
+  //     }
+  //   }
+
+  //   loadQuestions();
+
+  //   //mute
+  //   // const shuffledQuestions = questionsData.map((question) => ({
+  //   //   ...question,
+  //   //   answers: shuffleArray([...question.answers]), // Shuffle the answers for each question
+  //   // }));
+  //   // setQuestions(shuffleArray(shuffledQuestions)); // Shuffle the questions
+  //   //end mute
+  // }, [questionType]);
+
   useEffect(() => {
     async function loadQuestions() {
       try {
-        // Dynamically import the questions file based on questionType
-        let qData;
-        switch (questionType) {
-          case "RME1":
-            qData = await import("../../data/godscreationData");
-            break;
-          case "RME2":
-            qData = await import("../../data/godscreation2");
-            break;
-          case "RME3":
-            qData = await import("../../data/godscreation3");
-            break;
-          case "RME4":
-            qData = await import("../../data/religiouspractices");
-            break;
-          default:
-            qData = { default: [] };
-        }
-        setQuestionsData(qData.default);
+        // Construct file path based on questionType, assuming consistent naming
+        const filePath = `../../data/${questionType}`;
+        const qData = await import(filePath);
+
+        setQuestionsData(qData.default || []);
       } catch (error) {
         console.error("Error loading questions:", error);
+        setQuestionsData([]); // Fallback to empty data if there's an error
       }
     }
 
     loadQuestions();
   }, [questionType]);
-  //end my useeffect
 
-  // Shuffle questions and answers when the component first renders
+  //start
   useEffect(() => {
-    const shuffledQuestions = questionsData.map((question) => ({
-      ...question,
-      answers: shuffleArray([...question.answers]), // Shuffle the answers for each question
-    }));
-    setQuestions(shuffleArray(shuffledQuestions)); // Shuffle the questions
-  }, []);
+    if (questionsData.length > 0) {
+      const shuffledQuestions = questionsData.map((question) => ({
+        ...question,
+        answers: shuffleArray([...question.answers]),
+      }));
+      setQuestions(shuffleArray(shuffledQuestions));
+    }
+  }, [questionsData]);
+
+  //end
 
   const currentQuestion = questions[currentQuestionIndex]; // Get the current question
 
@@ -108,7 +141,7 @@ function QuestionsPage() {
 
   return (
     <div>
-      <h1>Quiz</h1>
+      <h1>Quiz: {quizTitle}</h1>
 
       {/* If all questions are answered, show the score */}
       {showScore ? (

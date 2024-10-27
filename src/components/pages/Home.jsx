@@ -29,7 +29,55 @@ function Home() {
         desc={questionType.RME4.desc}
         cardImage={questionType.RME4.cardImage}
       />
-      <div className={classes.card}>
+      <QuestionCard
+        type={questionType.RME5.type}
+        title={questionType.RME5.title}
+        desc={questionType.RME5.desc}
+        cardImage={questionType.RME5.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME6.type}
+        title={questionType.RME6.title}
+        desc={questionType.RME6.desc}
+        cardImage={questionType.RME6.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME7.type}
+        title={questionType.RME7.title}
+        desc={questionType.RME7.desc}
+        cardImage={questionType.RME7.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME8.type}
+        title={questionType.RME8.title}
+        desc={questionType.RME8.desc}
+        cardImage={questionType.RME8.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME9.type}
+        title={questionType.RME9.title}
+        desc={questionType.RME9.desc}
+        cardImage={questionType.RME9.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME10.type}
+        title={questionType.RME10.title}
+        desc={questionType.RME10.desc}
+        cardImage={questionType.RME10.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME11.type}
+        title={questionType.RME11.title}
+        desc={questionType.RME11.desc}
+        cardImage={questionType.RME11.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME12.type}
+        title={questionType.RME12.title}
+        desc={questionType.RME12.desc}
+        cardImage={questionType.RME12.cardImage}
+      />
+      {/* <div className={classes.card}>
         <img src="./images/bece.jpg" alt="one" />
         <div className={classes.content}>
           <h3>Card Two</h3>
@@ -88,7 +136,7 @@ function Home() {
             pariatur veniam laboriosam?
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
