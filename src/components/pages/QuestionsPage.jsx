@@ -1,4 +1,4 @@
-// import questionsData from "../../data/questionsData"; // Import the questions data
+// import myQuestionsData from "../../data/myQuestionsData"; // Import the questions data
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -12,7 +12,7 @@ function QuestionsPage() {
   const queryParams = new URLSearchParams(location.search);
   const questionType = queryParams.get("type"); // Get the question type from query parameters
   const quizTitle = queryParams.get("title"); // Get the
-  const [questionsData, setQuestionsData] = useState([]);
+  const [myQuestionsData, setmyQuestionsData] = useState([]);
 
   const [questions, setQuestions] = useState([]); // Shuffled questions state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track the current question
@@ -48,7 +48,7 @@ function QuestionsPage() {
   //         default:
   //           qData = { default: [] };
   //       }
-  //       setQuestionsData(qData.default);
+  //       setmyQuestionsData(qData.default);
   //     } catch (error) {
   //       console.error("Error loading questions:", error);
   //     }
@@ -57,7 +57,7 @@ function QuestionsPage() {
   //   loadQuestions();
 
   //   //mute
-  //   // const shuffledQuestions = questionsData.map((question) => ({
+  //   // const shuffledQuestions = myQuestionsData.map((question) => ({
   //   //   ...question,
   //   //   answers: shuffleArray([...question.answers]), // Shuffle the answers for each question
   //   // }));
@@ -69,13 +69,14 @@ function QuestionsPage() {
     async function loadQuestions() {
       try {
         // Construct file path based on questionType, assuming consistent naming
-        const filePath = `../../data/${questionType}`;
+        const filePath = `../../data/${questionType}.js`;
         const qData = await import(filePath);
+        console.log("Loading questions from:", filePath); // Log the file path
 
-        setQuestionsData(qData.default || []);
+        setmyQuestionsData(qData.default || []);
       } catch (error) {
         console.error("Error loading questions:", error);
-        setQuestionsData([]); // Fallback to empty data if there's an error
+        setmyQuestionsData([]); // Fallback to empty data if there's an error
       }
     }
 
@@ -84,14 +85,14 @@ function QuestionsPage() {
 
   //start
   useEffect(() => {
-    if (questionsData.length > 0) {
-      const shuffledQuestions = questionsData.map((question) => ({
+    if (myQuestionsData.length > 0) {
+      const shuffledQuestions = myQuestionsData.map((question) => ({
         ...question,
         answers: shuffleArray([...question.answers]),
       }));
       setQuestions(shuffleArray(shuffledQuestions));
     }
-  }, [questionsData]);
+  }, [myQuestionsData]);
 
   //end
 
@@ -127,7 +128,7 @@ function QuestionsPage() {
 
   // Restart the quiz
   const handleRestart = () => {
-    const shuffledQuestions = questionsData.map((question) => ({
+    const shuffledQuestions = myQuestionsData.map((question) => ({
       ...question,
       answers: shuffleArray([...question.answers]), // Shuffle the answers for each question
     }));
