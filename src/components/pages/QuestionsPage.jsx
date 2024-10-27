@@ -1,5 +1,6 @@
-import questionsData from "../../data/questionsData"; // Import the questions data
+// import questionsData from "../../data/questionsData"; // Import the questions data
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 // Utility function to shuffle an array (Fisher-Yates shuffle algorithm)
 function shuffleArray(array) {
@@ -7,12 +8,50 @@ function shuffleArray(array) {
 }
 
 function QuestionsPage() {
+  const location = useLocation(); // Get the current location
+  const queryParams = new URLSearchParams(location.search);
+  const questionType = queryParams.get("type"); // Get the question type from query parameters
+  const [questionsData, setQuestionsData] = useState([]);
+
   const [questions, setQuestions] = useState([]); // Shuffled questions state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track the current question
   const [score, setScore] = useState(0); // Track the score
   const [showScore, setShowScore] = useState(false); // Show score at the end
   const [selectedAnswer, setSelectedAnswer] = useState(null); // Track selected answer
   const [isAnswerConfirmed, setIsAnswerConfirmed] = useState(false); // Track if the answer is confirmed
+
+  //my useeffect
+
+  useEffect(() => {
+    async function loadQuestions() {
+      try {
+        // Dynamically import the questions file based on questionType
+        let qData;
+        switch (questionType) {
+          case "RME1":
+            qData = await import("../../data/godscreationData");
+            break;
+          case "RME2":
+            qData = await import("../../data/godscreation2");
+            break;
+          case "RME3":
+            qData = await import("../../data/godscreation3");
+            break;
+          case "RME4":
+            qData = await import("../../data/religiouspractices");
+            break;
+          default:
+            qData = { default: [] };
+        }
+        setQuestionsData(qData.default);
+      } catch (error) {
+        console.error("Error loading questions:", error);
+      }
+    }
+
+    loadQuestions();
+  }, [questionType]);
+  //end my useeffect
 
   // Shuffle questions and answers when the component first renders
   useEffect(() => {
