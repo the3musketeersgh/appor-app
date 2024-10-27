@@ -1,7 +1,9 @@
 // import myQuestionsData from "../../data/myQuestionsData"; // Import the questions data
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import rme1 from "../../data/RME1";
+import rme2 from "../../data/RME2";
+import rme3 from "../../data/RME3";
 // Utility function to shuffle an array (Fisher-Yates shuffle algorithm)
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -72,7 +74,23 @@ function QuestionsPage() {
         const filePath = `../../data/${questionType}.js`;
         const qData = await import(filePath);
         console.log("Loading questions from:", filePath); // Log the file path
-
+        // let qData;
+        // switch (questionType) {
+        //   case "RME1":
+        //     qData = rme1;
+        //     break;
+        //   case "RME2":
+        //     qData = rme2;
+        //     break;
+        //   case "RME3":
+        //     qData = rme3;
+        //     break;
+        //   case "RME4":
+        //     qData = rme3;
+        //     break;
+        //   default:
+        //     qData = { default: [] };
+        // }
         setmyQuestionsData(qData.default || []);
       } catch (error) {
         console.error("Error loading questions:", error);
