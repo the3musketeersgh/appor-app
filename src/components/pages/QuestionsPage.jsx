@@ -74,23 +74,7 @@ function QuestionsPage() {
         const filePath = `../../data/${questionType}.js`;
         const qData = await import(filePath);
         console.log("Loading questions from:", filePath); // Log the file path
-        // let qData;
-        // switch (questionType) {
-        //   case "RME1":
-        //     qData = rme1;
-        //     break;
-        //   case "RME2":
-        //     qData = rme2;
-        //     break;
-        //   case "RME3":
-        //     qData = rme3;
-        //     break;
-        //   case "RME4":
-        //     qData = rme3;
-        //     break;
-        //   default:
-        //     qData = { default: [] };
-        // }
+
         setmyQuestionsData(qData.default || []);
       } catch (error) {
         console.error("Error loading questions:", error);

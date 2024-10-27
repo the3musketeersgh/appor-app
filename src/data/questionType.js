@@ -71,9 +71,15 @@ const questionType = {
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
     cardImage: "../images/bece.jpg",
   },
-  RME12: {
+  RME13: {
     type: "RME13",
     title: "RME RELIGION AND ECONOMIC LIFE 1",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  RME14: {
+    type: "RME14",
+    title: "RME RELIGION AND ECONOMIC LIFE 2",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
     cardImage: "../images/bece.jpg",
   },

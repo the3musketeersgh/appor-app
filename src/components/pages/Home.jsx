@@ -77,6 +77,18 @@ function Home() {
         desc={questionType.RME12.desc}
         cardImage={questionType.RME12.cardImage}
       />
+      <QuestionCard
+        type={questionType.RME13.type}
+        title={questionType.RME13.title}
+        desc={questionType.RME13.desc}
+        cardImage={questionType.RME13.cardImage}
+      />
+      <QuestionCard
+        type={questionType.RME14.type}
+        title={questionType.RME14.title}
+        desc={questionType.RME14.desc}
+        cardImage={questionType.RME14.cardImage}
+      />
       {/* <div className={classes.card}>
         <img src="./images/bece.jpg" alt="one" />
         <div className={classes.content}>
