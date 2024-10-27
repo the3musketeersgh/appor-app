@@ -66,11 +66,11 @@ function QuestionsPage() {
   // }, [questionType]);
 
   useEffect(() => {
-    async function loadQuestions() {
+    function loadQuestions() {
       try {
         // Construct file path based on questionType, assuming consistent naming
         const filePath = `../../data/${questionType}`;
-        const qData = await import(filePath);
+        const qData = import(filePath);
 
         setQuestionsData(qData.default || []);
       } catch (error) {
