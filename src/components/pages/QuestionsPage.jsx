@@ -156,7 +156,9 @@ function QuestionsPage() {
   return (
     <div>
       <h1>Quiz: {quizTitle}</h1>
-
+      <h2>
+        Your Score: {score}/{questions.length}
+      </h2>
       {/* If all questions are answered, show the score */}
       {showScore ? (
         <div>

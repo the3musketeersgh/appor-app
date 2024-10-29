@@ -1,6 +1,10 @@
 import COMP1 from "./COMP1";
 import COMP2 from "./COMP2";
 import COMP3 from "./COMP3";
+import COMP4 from "./COMP4";
+import COMP5 from "./COMP5";
+import COMP6 from "./COMP6";
+import COMP7 from "./COMP7";
 import RME1 from "./RME1";
 import RME2 from "./RME2";
 import RME3 from "./RME3";
@@ -24,6 +28,10 @@ const questionsMap = {
   COMP1,
   COMP2,
   COMP3,
+  COMP4,
+  COMP5,
+  COMP6,
+  COMP7,
   RME1,
   RME2,
   RME3,
