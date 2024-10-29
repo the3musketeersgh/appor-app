@@ -89,6 +89,30 @@ function Home() {
         desc={questionType.RME14.desc}
         cardImage={questionType.RME14.cardImage}
       />
+      <QuestionCard
+        type={questionType.SCI1.type}
+        title={questionType.SCI1.title}
+        desc={questionType.SCI1.desc}
+        cardImage={questionType.SCI1.cardImage}
+      />
+      <QuestionCard
+        type={questionType.COMP1.type}
+        title={questionType.COMP1.title}
+        desc={questionType.COMP1.desc}
+        cardImage={questionType.COMP1.cardImage}
+      />
+      <QuestionCard
+        type={questionType.COMP2.type}
+        title={questionType.COMP2.title}
+        desc={questionType.COMP2.desc}
+        cardImage={questionType.COMP2.cardImage}
+      />
+      <QuestionCard
+        type={questionType.COMP33.type}
+        title={questionType.COMP3.title}
+        desc={questionType.COMP3.desc}
+        cardImage={questionType.COMP3.cardImage}
+      />
       {/* <div className={classes.card}>
         <img src="./images/bece.jpg" alt="one" />
         <div className={classes.content}>

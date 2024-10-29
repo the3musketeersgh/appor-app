@@ -83,6 +83,30 @@ const questionType = {
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
     cardImage: "../images/bece.jpg",
   },
+  SCI1: {
+    type: "SCI1",
+    title: "SCI DIVERSITY OF MATTER 1",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  COMP1: {
+    type: "COMP1",
+    title: "COMP INTRODUCTION TO COMPUTING 1",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  COMP2: {
+    type: "COMP2",
+    title: "COMP INTRODUCTION TO COMPUTING 2",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  COMP3: {
+    type: "COMP3",
+    title: "COMP INTRODUCTION TO COMPUTING 3",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
 };
 
 export default questionType;
