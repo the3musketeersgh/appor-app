@@ -108,7 +108,7 @@ function Home() {
         cardImage={questionType.COMP2.cardImage}
       />
       <QuestionCard
-        type={questionType.COMP33.type}
+        type={questionType.COMP3.type}
         title={questionType.COMP3.title}
         desc={questionType.COMP3.desc}
         cardImage={questionType.COMP3.cardImage}

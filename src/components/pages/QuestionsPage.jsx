@@ -1,9 +1,8 @@
 // import myQuestionsData from "../../data/myQuestionsData"; // Import the questions data
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import rme1 from "../../data/RME1";
-import rme2 from "../../data/RME2";
-import rme3 from "../../data/RME3";
+import questionsMap from "../../data/questionsMap";
+
 // Utility function to shuffle an array (Fisher-Yates shuffle algorithm)
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -68,24 +67,36 @@ function QuestionsPage() {
   // }, [questionType]);
 
   useEffect(() => {
-    async function loadQuestions() {
-      try {
-        // Construct file path based on questionType, assuming consistent naming
-        const filePath = `../../data/${questionType}.js`;
-        const qData = await import(filePath);
-        console.log("Loading questions from:", filePath); // Log the file path
-
-        setmyQuestionsData(qData.default || []);
-      } catch (error) {
-        console.error("Error loading questions:", error);
-        setmyQuestionsData([]); // Fallback to empty data if there's an error
-      }
+    try {
+      const qData = questionsMap[questionType] || [];
+      console.log("Loading new questions from: ", questionType);
+      setmyQuestionsData(qData);
+    } catch (error) {
+      console.error("Error loading questions map:", error);
     }
-
-    loadQuestions();
   }, [questionType]);
 
+  //old useeffect
+  // useEffect(() => {
+  //   async function loadQuestions() {
+  //     try {
+  //       // Construct file path based on questionType, assuming consistent naming
+  //       const filePath = `../../data/${questionType}.js`;
+  //       const qData = await import(filePath);
+  //       console.log("Loading questions from:", filePath); // Log the file path
+
+  //       setmyQuestionsData(qData.default || []);
+  //     } catch (error) {
+  //       console.error("Error loading questions:", error);
+  //       setmyQuestionsData([]); // Fallback to empty data if there's an error
+  //     }
+  //   }
+
+  //   loadQuestions();
+  // }, [questionType]);
+
   //start
+
   useEffect(() => {
     if (myQuestionsData.length > 0) {
       const shuffledQuestions = myQuestionsData.map((question) => ({
