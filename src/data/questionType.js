@@ -131,6 +131,30 @@ const questionType = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
     cardImage: "../images/bece.jpg",
   },
+  {
+    type: "COMP8",
+    title: "COMP: COMMUNICATION NETWORKS 1",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  {
+    type: "COMP9",
+    title: "COMP: COMMUNICATION NETWORKS 2",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  {
+    type: "COMP10",
+    title: "COMP: COMPUTATIONAL THINKING 1",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
+  {
+    type: "COMP11",
+    title: "COMP: COMPUTATIONAL THINKING 2",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos praesentium amet itaque iste omnis, recusandae cumquedebitis, ea, magni impedit nulla unde ipsa aut assumenda eospariatur veniam laboriosam?",
+    cardImage: "../images/bece.jpg",
+  },
 ];
 
 export default questionType;
